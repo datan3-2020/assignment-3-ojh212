@@ -180,11 +180,7 @@ Write the R code that does the following.
 LongDelta <- Long %>%
   filter(!is.na(vote6)) %>%
   group_by(pidp) %>%
-  pivot_wider(names_from = wave, values_from = vote6) %>%
-  mutate(Delta = na.omit(("wave 2" - "wave 1") + ("wave 3" - "wave 2") + ("wave 4" - "wave 3") + ("wave 5" - "wave 4") + ("wave 6" - "wave 5") + ("wave 7" - "wave 6")))
-  group_by(sex_dv) %>%
-  summarise(MeanDeltaSex = mean(Delta)) %>%
-  group_by(age)
-  
+  pivot_wider(names_from = wave, values_from = vote6)
+ 
 
 ```
